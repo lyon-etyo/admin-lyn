@@ -1,2 +1,2 @@
-# admin-lyn
-Admin Dashboard LYN: Admin dashboard page using HTML &amp; CSS3
+# Admin LYN
+Admin Dashboard LYN: Responsive admin dashboard page using [Line Awesome icon](https://icons8.com/line-awesome)
