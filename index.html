@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./assets/js/app.js" defer></script>
+    <!-- prettier-ignore -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Admin Lyn</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar__brand">
+        <h1><span class="lab la-accusoft"></span>Admin Lyn</h1>
+      </div>
+      <nav class="sidebar__menu">
+        <ul>
+          <li>
+            <a href="#"><i class="las la-tachometer-alt"></i><span>Dashboard</span></a>
+          </li>
+          <li>
+            <a href="#"><i class="las la-user"></i><span>Customers</span></a>
+          </li>
+          <li>
+            <a href="#"><i class="las la-list"></i><span>Projects</span></a>
+          </li>
+          <li>
+            <a href="#"><i class="las la-warehouse"></i><span>Inventory</span></a>
+          </li>
+          <li>
+            <a href="#"><i class="las la-file-invoice-dollar"></i><span>Orders</span></a>
+          </li>
+          <li>
+            <a href="#"><i class="las la-tasks"></i><span>Tasks</span></a>
+          </li>
+          <li>
+            <a href="#"><i class="las la-cog"></i><span>Setting</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main-content">
+      <header>
+        <h1>
+          <label for=""><i class="las la-bars"></i></label>Dashboard
+        </h1>
+
+        <div class="search-wrapper">
+          <i class="las la-search"></i>
+          <input type="search" placeholder="Search menu" />
+        </div>
+
+        <div class="user-wrapper">
+          <img src="https://i.pravatar.cc/30" alt="user-avatar" width="30" height="30" />
+          <div>
+            <h4>John Doe</h4>
+            <small>Administrator</small>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="cards">
+          <div class="card">
+            <div class="card__description">
+              <h1>54</h1>
+              <span>Customers</span>
+            </div>
+            <div class="card__icon">
+              <i class="las la-users"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__description">
+              <h1>40</h1>
+              <span>Projects</span>
+            </div>
+            <div class="card__icon">
+              <i class="las la-list"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__description">
+              <h1>60</h1>
+              <span>Orders</span>
+            </div>
+            <div class="card__icon">
+              <i class="las la-file-invoice-dollar"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__description">
+              <h1>15</h1>
+              <span>Inventory</span>
+            </div>
+            <div class="card__icon">
+              <i class="las la-warehouse"></i>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__description">
+              <h1>10</h1>
+              <span>Tasks</span>
+            </div>
+            <div class="card__icon">
+              <i class="las la-tasks"></i>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
