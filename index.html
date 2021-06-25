@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./assets/js/app.js" defer></script>
     <!-- prettier-ignore -->
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Admin Lyn</title>
   </head>
   <body>
+    <input type="checkbox" id="nav-toggler" />
     <div class="sidebar">
       <div class="sidebar__brand">
-        <h1><span class="lab la-accusoft"></span>Admin Lyn</h1>
+        <h2><i class="las la-gift"></i>Admin Lyn</h2>
       </div>
       <nav class="sidebar__menu">
         <ul>
           <li>
-            <a href="#"><i class="las la-tachometer-alt"></i><span>Dashboard</span></a>
+            <a href="#" class="active"
+              ><i class="las la-tachometer-alt"></i><span>Dashboard</span></a
+            >
           </li>
           <li>
             <a href="#"><i class="las la-user"></i><span>Customers</span></a>
@@ -43,9 +46,10 @@
     </div>
     <div class="main-content">
       <header>
-        <h1>
-          <label for=""><i class="las la-bars"></i></label>Dashboard
-        </h1>
+        <div class="hamburger-menu">
+          <label for="nav-toggler"><i class="las la-bars"></i></label>
+          <h2>Dashboard</h2>
+        </div>
 
         <div class="search-wrapper">
           <i class="las la-search"></i>
@@ -62,8 +66,8 @@
       </header>
 
       <main>
-        <div class="cards">
-          <div class="card">
+        <section class="quick-cards">
+          <div class="card active">
             <div class="card__description">
               <h1>54</h1>
               <span>Customers</span>
@@ -108,7 +112,223 @@
               <i class="las la-tasks"></i>
             </div>
           </div>
-        </div>
+        </section>
+        <section class="projects">
+          <header>
+            <h2>Recents Projects</h2>
+            <button>See All <i class="las la-long-arrow-alt-right"></i></button>
+          </header>
+          <div class="projects-list-wrapper">
+            <table class="list-projects">
+              <colgroup>
+                <col class="project-name-column" />
+                <col class="department-column" />
+                <col class="status-column" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Project Name</th>
+                  <th>Department</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>XYZ School's Web Development</td>
+                  <td>Fullstack Team</td>
+                  <td data-status="completed" title="Completed"><span>Completed</span></td>
+                </tr>
+                <tr>
+                  <td>ZYX Mall's Web Design</td>
+                  <td>UI/UX Team</td>
+                  <td data-status="in progress" title="In proress"><span>In progress</span></td>
+                </tr>
+                <tr>
+                  <td>XZY Organization's Mobile App Development</td>
+                  <td>Mobile Team</td>
+                  <td data-status="in progress" title="In proress"><span>In progress</span></td>
+                </tr>
+                <tr>
+                  <td>ZXY City's Tour Mobile App Development</td>
+                  <td>Mobile Team</td>
+                  <td data-status="pending" title="Pending"><span>Pending</span></td>
+                </tr>
+                <tr>
+                  <td>YZX Gym's Web Development</td>
+                  <td>Fullstack Team</td>
+                  <td data-status="completed" title="Completed"><span>Completed</span></td>
+                </tr>
+                <tr>
+                  <td>YXZ Hotel Web Design</td>
+                  <td>UI/UX Team</td>
+                  <td data-status="completed" title="Completed"><span>Completed</span></td>
+                </tr>
+                <tr>
+                  <td>ABC Hotel's Web Development</td>
+                  <td>Fullstack Team</td>
+                  <td data-status="in progress" title="In proress"><span>In proress</span></td>
+                </tr>
+                <tr>
+                  <td>CBA Car Rent's Web Design</td>
+                  <td>UI/UX Team</td>
+                  <td data-status="completed" title="Completed"><span>Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="customers">
+          <header>
+            <h2>New Customers</h2>
+            <button>See all <i class="las la-long-arrow-alt-right"></i></button>
+          </header>
+          <ul class="customers-list">
+            <li class="customer">
+              <img
+                class="customer__image"
+                src="https://i.pravatar.cc/30"
+                alt="customer-image"
+                width="30"
+                height="30"
+              />
+              <div class="customer__info">
+                <h4>John Donut</h4>
+                <small>CEO of ZYX Mall</small>
+              </div>
+              <div class="customer__contacts">
+                <i class="las la-info-circle"></i>
+                <i class="las la-sms"></i>
+                <i class="las la-phone"></i>
+              </div>
+            </li>
+            <li class="customer">
+              <img
+                class="customer__image"
+                src="https://i.pravatar.cc/30"
+                alt="customer-image"
+                width="30"
+                height="30"
+              />
+              <div class="customer__info">
+                <h4>John Donut</h4>
+                <small>CEO of ZYX Mall</small>
+              </div>
+              <div class="customer__contacts">
+                <i class="las la-info-circle"></i>
+                <i class="las la-sms"></i>
+                <i class="las la-phone"></i>
+              </div>
+            </li>
+            <li class="customer">
+              <img
+                class="customer__image"
+                src="https://i.pravatar.cc/30"
+                alt="customer-image"
+                width="30"
+                height="30"
+              />
+              <div class="customer__info">
+                <h4>John Donut</h4>
+                <small>CEO of ZYX Mall</small>
+              </div>
+              <div class="customer__contacts">
+                <i class="las la-info-circle"></i>
+                <i class="las la-sms"></i>
+                <i class="las la-phone"></i>
+              </div>
+            </li>
+            <li class="customer">
+              <img
+                class="customer__image"
+                src="https://i.pravatar.cc/30"
+                alt="customer-image"
+                width="30"
+                height="30"
+              />
+              <div class="customer__info">
+                <h4>John Donut</h4>
+                <small>CEO of ZYX Mall</small>
+              </div>
+              <div class="customer__contacts">
+                <i class="las la-info-circle"></i>
+                <i class="las la-sms"></i>
+                <i class="las la-phone"></i>
+              </div>
+            </li>
+            <li class="customer">
+              <img
+                class="customer__image"
+                src="https://i.pravatar.cc/30"
+                alt="customer-image"
+                width="30"
+                height="30"
+              />
+              <div class="customer__info">
+                <h4>John Donut</h4>
+                <small>CEO of ZYX Mall</small>
+              </div>
+              <div class="customer__contacts">
+                <i class="las la-info-circle"></i>
+                <i class="las la-sms"></i>
+                <i class="las la-phone"></i>
+              </div>
+            </li>
+            <li class="customer">
+              <img
+                class="customer__image"
+                src="https://i.pravatar.cc/30"
+                alt="customer-image"
+                width="30"
+                height="30"
+              />
+              <div class="customer__info">
+                <h4>John Lorem</h4>
+                <small>CIO of CBA Car Rent</small>
+              </div>
+              <div class="customer__contacts">
+                <i class="las la-info-circle"></i>
+                <i class="las la-sms"></i>
+                <i class="las la-phone"></i>
+              </div>
+            </li>
+            <li class="customer">
+              <img
+                class="customer__image"
+                src="https://i.pravatar.cc/30"
+                alt="customer-image"
+                width="30"
+                height="30"
+              />
+              <div class="customer__info">
+                <h4>George Labuhari Mimikri</h4>
+                <small>HRD of XZY Organization</small>
+              </div>
+              <div class="customer__contacts">
+                <i class="las la-info-circle"></i>
+                <i class="las la-sms"></i>
+                <i class="las la-phone"></i>
+              </div>
+            </li>
+            <li class="customer">
+              <img
+                class="customer__image"
+                src="https://i.pravatar.cc/30"
+                alt="customer-image"
+                width="30"
+                height="30"
+              />
+              <div class="customer__info">
+                <h4>John Cena</h4>
+                <small>CTO of ABC Hotel</small>
+              </div>
+              <div class="customer__contacts">
+                <i class="las la-info-circle"></i>
+                <i class="las la-sms"></i>
+                <i class="las la-phone"></i>
+              </div>
+            </li>
+          </ul>
+        </section>
       </main>
     </div>
   </body>
