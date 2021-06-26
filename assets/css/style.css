@@ -68,13 +68,6 @@ img {
   transform: translateX(0);
 }
 
-.sidebar__brand {
-  display: flex;
-  display: none;
-  justify-content: center;
-  color: var(--color-light);
-}
-
 .sidebar__menu {
   display: flex;
   height: 100%;
@@ -89,18 +82,18 @@ img {
 }
 
 .sidebar__menu li {
-  padding-left: 1.8em;
+  padding-left: clamp(1em, calc(1em + 1vw), 2em);
 }
 
 .sidebar__menu li:last-child {
   margin-top: auto;
+  margin-bottom: 1em;
 }
 
 .sidebar__menu li a {
   display: flex;
   align-items: center;
-  padding: 1em 1em 1em 1em;
-  transition: color 100ms;
+  padding: 1em;
 }
 
 .sidebar__menu li a:not(.active):is(:hover, :focus) {
@@ -124,10 +117,6 @@ img {
   margin-right: 1rem;
 }
 
-.main-content {
-  /* margin-left: clamp(12rem, 20vw, 18rem); */
-}
-
 /* Header component styles */
 .main-content > header {
   box-shadow: var(--shadow-primary);
@@ -139,6 +128,7 @@ img {
   position: fixed;
   top: 0;
   left: 0;
+  transition: 300ms ease;
   width: 100%;
 }
 
@@ -238,6 +228,7 @@ section.quick-cards {
   flex-direction: column;
   gap: 1em;
 }
+
 section.quick-cards .card {
   display: flex;
   flex: 1 1 100%;
@@ -290,8 +281,12 @@ section.customers > header {
 }
 
 /* Table inside .projects styles */
+section.projects .projects-list-wrapper {
+  overflow-x: auto;
+}
 section.projects table {
   border-collapse: collapse;
+  width: 100%;
 }
 section.projects thead tr {
   border-top: 2px solid var(--color-text-grey);
@@ -304,9 +299,7 @@ section.projects thead th,
 section.projects tbody td {
   padding: 0.5em 0;
 }
-section.projects .projects-list-wrapper {
-  overflow-x: auto;
-}
+
 section.projects :is(td, th):nth-of-type(2) {
   display: none;
 }
@@ -363,4 +356,99 @@ section.customers .customer__contacts > * {
 }
 section.customers .customer__contacts > *:is(:hover, :focus) {
   filter: invert(1);
+}
+
+@media screen and (min-width: 600px) {
+  section.quick-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  section.projects :is(td, th):nth-of-type(2) {
+    display: table-cell;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    transform: translateX(calc(clamp(14rem, 20vw, 18rem) * 0.6 * -1));
+  }
+  .sidebar__menu li a {
+    justify-content: space-between;
+  }
+  #nav-toggler:checked + .sidebar .sidebar__menu li a {
+    justify-content: flex-start;
+  }
+  .sidebar__menu li span {
+    order: -1;
+    opacity: 0;
+  }
+  #nav-toggler:checked + .sidebar .sidebar__menu span {
+    order: 1;
+    opacity: 1;
+  }
+
+  main {
+    margin: 4.5em 1em 1em calc(clamp(14rem, 20vw, 18rem) * 0.5);
+    transition: 300ms ease;
+  }
+
+  #nav-toggler:checked ~ .main-content main {
+    margin: 4.5em 1em 1em calc(clamp(14rem, 20vw, 18rem) * 1.1);
+  }
+
+  .search-wrapper {
+    display: flex;
+  }
+
+  .search-wrapper form {
+    display: flex;
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    width: clamp(10rem, calc(8rem + 8vw), 16rem);
+  }
+
+  .search-wrapper i {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .search-wrapper input {
+    border: none;
+    border-top-right-radius: 0.5rem;
+    outline: none;
+    display: block;
+    background: var(--color-light);
+    width: 100%;
+  }
+
+  section.quick-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  section.projects :is(td, th):nth-of-type(2) {
+    display: table-cell;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  section.quick-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  section.projects :is(td, th):nth-of-type(2) {
+    display: table-cell;
+  }
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "cards cards"
+      "projects customers";
+  }
+  section.projects {
+    height: max-content;
+  }
 }

@@ -13,33 +13,32 @@
   <body>
     <input type="checkbox" id="nav-toggler" />
     <div class="sidebar">
-      <div class="sidebar__brand">
-        <h2><i class="las la-gift"></i>Admin Lyn</h2>
-      </div>
       <nav class="sidebar__menu">
         <ul>
           <li>
-            <a href="#" class="active"
-              ><i class="las la-tachometer-alt"></i><span>Dashboard</span></a
-            >
+            <a href="javascript:void" class="active">
+              <i class="las la-tachometer-alt"></i><span>Dashboard</span>
+            </a>
           </li>
           <li>
-            <a href="#"><i class="las la-user"></i><span>Customers</span></a>
+            <a href="javascript:void"> <i class="las la-user"></i><span>Customers</span> </a>
           </li>
           <li>
-            <a href="#"><i class="las la-list"></i><span>Projects</span></a>
+            <a href="javascript:void"> <i class="las la-list"></i><span>Projects</span> </a>
           </li>
           <li>
-            <a href="#"><i class="las la-warehouse"></i><span>Inventory</span></a>
+            <a href="javascript:void"> <i class="las la-warehouse"></i><span>Inventory</span> </a>
           </li>
           <li>
-            <a href="#"><i class="las la-file-invoice-dollar"></i><span>Orders</span></a>
+            <a href="javascript:void">
+              <i class="las la-file-invoice-dollar"></i><span>Orders</span>
+            </a>
           </li>
           <li>
-            <a href="#"><i class="las la-tasks"></i><span>Tasks</span></a>
+            <a href="javascript:void"> <i class="las la-tasks"></i><span>Tasks</span> </a>
           </li>
           <li>
-            <a href="#"><i class="las la-cog"></i><span>Setting</span></a>
+            <a href="javascript:void"> <i class="las la-cog"></i><span>Setting</span> </a>
           </li>
         </ul>
       </nav>
@@ -48,12 +47,14 @@
       <header>
         <div class="hamburger-menu">
           <label for="nav-toggler"><i class="las la-bars"></i></label>
-          <h2>Dashboard</h2>
+          <h2>Admin Lyn</h2>
         </div>
 
         <div class="search-wrapper">
-          <i class="las la-search"></i>
-          <input type="search" placeholder="Search menu" />
+          <form class="search-form">
+            <i class="las la-search"></i>
+            <input type="search" placeholder="Search menu" />
+          </form>
         </div>
 
         <div class="user-wrapper">
